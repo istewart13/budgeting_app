@@ -1,8 +1,8 @@
 require('sinatra')
-# require_relative('controllers/books_controller')
-# require_relative('controllers/members_controller')
-# require_relative('controllers/rentals_controller')
+require_relative('controllers/merchants_controller')
+require_relative('controllers/transactions_controller')
+require_relative('controllers/tags_controller')
 
-# get '/' do
-#   erb :home
-# end
+get '/' do
+  erb :home
+end
