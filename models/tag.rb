@@ -28,8 +28,10 @@ class Tag
     Tag.delete(@id)
   end
 
-  # def find()
-  # end
+  def self.find(id)
+    sql = "SELECT * FROM tags WHERE id = #{id}"
+    return Tag.map_items(sql)
+  end
 
   def merchants()
     sql = "SELECT merchants.* FROM merchants INNER JOIN transactions ON transactions.merchant_id = merchants.id WHERE tag_id = #{@id};"
