@@ -29,6 +29,11 @@ class Merchant
     return Merchant.map_items(sql)
   end
 
+  def update(name)
+    sql = "UPDATE merchants SET name = '#{name}' WHERE id = #{@id}"
+    return Merchant.map_items(sql)
+  end
+
   def delete()
     Merchant.delete(@id)
   end
