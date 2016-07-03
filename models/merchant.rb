@@ -24,12 +24,14 @@ class Merchant
     return Merchant.map_items(sql)
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM merchants WHERE id = #{id}"
+    return Merchant.map_items(sql)
+  end
+
   def delete()
     Merchant.delete(@id)
   end
-
-  # def find()
-  # end
 
   def tags()
     sql = "SELECT tags.* FROM tags INNER JOIN transactions ON transactions.tag_id = tags.id WHERE merchant_id = #{@id};"

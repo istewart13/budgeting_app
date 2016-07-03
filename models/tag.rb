@@ -19,8 +19,14 @@ class Tag
   # def update()
   # end
 
-  # def delete()
-  # end
+  def self.delete(id)
+    sql = "DELETE FROM tags WHERE id = #{id}"
+    return Tag.map_items(sql)
+  end
+
+  def delete()
+    Tag.delete(@id)
+  end
 
   # def find()
   # end
