@@ -2,8 +2,6 @@ DROP TABLE transactions;
 DROP TABLE merchants;
 DROP TABLE tags;
 
-CASCADE ON DELETE
-
 CREATE TABLE merchants (
   id serial4 PRIMARY KEY,
   name VARCHAR(255) NOT NULL
