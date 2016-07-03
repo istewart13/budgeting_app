@@ -19,8 +19,14 @@ class Merchant
   # def update()
   # end
 
-  # def delete()
-  # end
+  def self.delete(id)
+    sql = "DELETE FROM merchants WHERE id = #{id}"
+    return Merchant.map_items(sql)
+  end
+
+  def delete()
+    Merchant.delete(@id)
+  end
 
   # def find()
   # end

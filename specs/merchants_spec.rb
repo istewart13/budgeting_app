@@ -1,14 +1,14 @@
-require('minitest/autorun')
-require_relative( '../models/merchant' )
+# require('minitest/autorun')
+# require_relative( '../models/merchant' )
 
-class TestMerchant < MiniTest::Test
+# class TestMerchant < MiniTest::Test
 
-  def setup
-    @merchant = Merchant.new('Tesco')
-  end
+#   def setup
+#     @merchant = Merchant.new('Tesco')
+#   end
 
-  def test_merchant_name()
-    assert_equal('Tesco', @merchant.name())
-  end
+#   def test_merchant_name()
+#     assert_equal('Tesco', @merchant.name())
+#   end
 
-end
+# end

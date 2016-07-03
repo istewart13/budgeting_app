@@ -12,4 +12,11 @@ def total_expenditure
   return total
 end
 
+# def total_expenditure_by_tag(tag)
+#   total = 0
+#   @transactions.select{ |transaction| transaction. }
+#   @transactions.each { |transaction| total += transaction.value } 
+#   return total
+# end
+
 end

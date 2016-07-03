@@ -20,6 +20,10 @@ class Transaction
     return result
   end
 
+  # def tag()
+  #   sql = 
+  # end
+
 #   def members()
 #     sql = "SELECT m.* FROM members m INNER JOIN rentals r ON r.member_id = members.id WHERE book_id = #{@id}"
 #     return Member.map_items(sql)
