@@ -16,17 +16,9 @@ class Merchant
     return result
   end
 
-  # def update()
-  # end
-
-  def self.delete(id)
-    sql = "DELETE FROM merchants WHERE id = #{id}"
-    return Merchant.map_items(sql)
-  end
-
-  def self.find(id)
-    sql = "SELECT * FROM merchants WHERE id = #{id}"
-    return Merchant.map_items(sql)
+  def tags()
+    sql = "SELECT tags.* FROM tags INNER JOIN transactions ON transactions.tag_id = tags.id WHERE merchant_id = #{@id};"
+    return Tag.map_items(sql)
   end
 
   def update(name)
@@ -38,13 +30,18 @@ class Merchant
     Merchant.delete(@id)
   end
 
-  def tags()
-    sql = "SELECT tags.* FROM tags INNER JOIN transactions ON transactions.tag_id = tags.id WHERE merchant_id = #{@id};"
-    return Tag.map_items(sql)
-  end
-
   def self.all()
     sql = "SELECT * FROM merchants"
+    return Merchant.map_items(sql)
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM merchants WHERE id = #{id}"
+    return Merchant.map_items(sql)
+  end
+
+  def self.delete(id)
+    sql = "DELETE FROM merchants WHERE id = #{id}"
     return Merchant.map_items(sql)
   end
 

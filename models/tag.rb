@@ -16,13 +16,13 @@ class Tag
     return result
   end
 
-  def update(name)
-    sql = "UPDATE tags SET name = '#{name}' WHERE id = #{@id}"
-    return Tag.map_items(sql)
+  def merchants()
+    sql = "SELECT merchants.* FROM merchants INNER JOIN transactions ON transactions.merchant_id = merchants.id WHERE tag_id = #{@id};"
+    return Merchant.map_items(sql)
   end
 
-  def self.delete(id)
-    sql = "DELETE FROM tags WHERE id = #{id}"
+  def update(name)
+    sql = "UPDATE tags SET name = '#{name}' WHERE id = #{@id}"
     return Tag.map_items(sql)
   end
 
@@ -30,18 +30,18 @@ class Tag
     Tag.delete(@id)
   end
 
+  def self.all()
+    sql = "SELECT * FROM tags"
+    return Tag.map_items(sql)
+  end
+  
   def self.find(id)
     sql = "SELECT * FROM tags WHERE id = #{id}"
     return Tag.map_items(sql)
   end
 
-  def merchants()
-    sql = "SELECT merchants.* FROM merchants INNER JOIN transactions ON transactions.merchant_id = merchants.id WHERE tag_id = #{@id};"
-    return Merchant.map_items(sql)
-  end
-
-  def self.all()
-    sql = "SELECT * FROM tags"
+  def self.delete(id)
+    sql = "DELETE FROM tags WHERE id = #{id}"
     return Tag.map_items(sql)
   end
 
