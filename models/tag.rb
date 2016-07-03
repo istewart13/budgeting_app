@@ -16,8 +16,10 @@ class Tag
     return result
   end
 
-  # def update()
-  # end
+  def update(name)
+    sql = "UPDATE tags SET name = '#{name}' WHERE id = #{@id}"
+    return Tag.map_items(sql)
+  end
 
   def self.delete(id)
     sql = "DELETE FROM tags WHERE id = #{id}"
