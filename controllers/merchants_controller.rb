@@ -32,8 +32,7 @@ post "/merchants/:id" do
   redirect to("/merchants/#{params[:id]}")
 end
 
-# # POST "/merchants/3" - Deletes a specific merchant
-# post "/merchants/:id/delete" do
-#   # some code here
-#   erb(:'merchants/delete')
-# end
+post "/merchants/:id/delete" do
+  Merchant.delete(params[:id])
+  redirect to('/merchants')
+end
