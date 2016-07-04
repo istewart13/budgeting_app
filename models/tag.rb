@@ -37,7 +37,12 @@ class Tag
   
   def self.find(id)
     sql = "SELECT * FROM tags WHERE id = #{id}"
-    return Tag.map_items(sql)
+    return Tag.map_item(sql)
+  end
+
+  def self.update(options)
+    sql = "UPDATE tags SET name = '#{options['name']}' WHERE id = #{options['id']}"
+    return Tag.map_item(sql)
   end
 
   def self.delete(id)
