@@ -40,6 +40,11 @@ class Merchant
     return Merchant.map_item(sql)
   end
 
+  def self.update(options)
+    sql = "UPDATE merchants SET name = '#{options['name']}' WHERE id = #{options['id']}"
+    return Merchant.map_item(sql)
+  end
+
   def self.delete(id)
     sql = "DELETE FROM merchants WHERE id = #{id}"
     return Merchant.map_items(sql)

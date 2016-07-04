@@ -22,16 +22,15 @@ get "/merchants/:id" do
   erb(:'merchants/show')
 end
 
-# get "/merchants/:id/edit" do
-#   # some code here
-#   erb(:'merchants/edit')
-# end
+get "/merchants/:id/edit" do
+  @merchant = Merchant.find(params[:id])
+  erb(:'merchants/edit')
+end
 
-# # PUT "/merchants/3" - Updates a specific merchant
-# post "/merchants/:id" do
-#   # some code here
-#   erb(:'merchants/update')
-# end
+post "/merchants/:id" do
+  @merchant = Merchant.update(params)
+  redirect to("/merchants/#{params[:id]}")
+end
 
 # # POST "/merchants/3" - Deletes a specific merchant
 # post "/merchants/:id/delete" do
