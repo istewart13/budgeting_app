@@ -37,7 +37,7 @@ class Merchant
 
   def self.find(id)
     sql = "SELECT * FROM merchants WHERE id = #{id}"
-    return Merchant.map_items(sql)
+    return Merchant.map_item(sql)
   end
 
   def self.delete(id)
