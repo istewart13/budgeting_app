@@ -20,14 +20,15 @@ class Transaction
     return result
   end
 
-  # def tag()
-  #   sql = 
-  # end
+  def tag()
+    sql = "SELECT * FROM tags WHERE id = #{@tag_id}"
+    return Tag.map_item(sql)
+  end
 
-#   def members()
-#     sql = "SELECT m.* FROM members m INNER JOIN rentals r ON r.member_id = members.id WHERE book_id = #{@id}"
-#     return Member.map_items(sql)
-#   end
+  def merchant()
+    sql = "SELECT * FROM merchants WHERE id = #{@merchant_id}"
+    return Merchant.map_item(sql)
+  end
 
   def self.all()
     sql = "SELECT * FROM transactions"

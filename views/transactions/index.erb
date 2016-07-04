@@ -1,10 +1,11 @@
 <a href="/transactions/new">Add new transaction</a><br>
 
 <% @transactions.each do |transaction| %>
-  <%= transaction.merchant_id %>
-  <%= transaction.tag_id %>
-  <%= transaction.value %>
-  <%= transaction.transaction_date %>
-  <%= transaction.description %>
+  ID: <%= transaction.id %>
+  Merchant: <%= transaction.merchant.name %>
+  Tag: <%= transaction.tag.name %>
+  Value: <%= transaction.value %>
+  Date: <%= transaction.transaction_date %>
+  Description: <%= transaction.description %>
   <br>
 <% end %>
