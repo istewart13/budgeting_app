@@ -24,6 +24,3 @@ tr1 = transaction1.save
 
 transaction2 = Transaction.new({'merchant_id' => m2.id, 'tag_id' => t2.id, 'value' => 40, 'transaction_date' => '2016-05-15', 'description' => 'Bought a lamp'})
 tr2 = transaction2.save
-
-transactions = Transaction.all()
-analysis = Analysis.new(transactions)
