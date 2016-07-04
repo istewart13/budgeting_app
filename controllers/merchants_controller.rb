@@ -11,8 +11,9 @@ get '/merchants/new' do
 end
 
 post '/merchants' do 
-  # create pizza object
-
-  # save to db
+  @merchant = Merchant.new(params)
+  # binding.pry
+  @merchant.save
+  # binding.pry
   erb(:'merchants/create')
 end

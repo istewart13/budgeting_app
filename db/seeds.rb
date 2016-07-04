@@ -27,8 +27,3 @@ tr2 = transaction2.save
 
 transactions = Transaction.all()
 analysis = Analysis.new(transactions)
-
-# NEED TO REMOVE
-binding.pry
-nil
-# NEED TO REMOVE
