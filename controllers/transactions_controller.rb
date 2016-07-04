@@ -19,10 +19,10 @@ post '/transactions' do
   # redirect to('/transactions')
 end
 
-# get "/transactions/:id" do
-#   @transaction = Transaction.find(params[:id])
-#   erb(:'transactions/show')
-# end
+get "/transactions/:id" do
+  @transaction = Transaction.find(params[:id])
+  erb(:'transactions/show')
+end
 
 # get "/transactions/:id/edit" do
 #   @transaction = Transaction.find(params[:id])
