@@ -31,9 +31,9 @@ class TestAnalysis < Minitest::Test
     assert_equal(120, result)
   end
 
-  # def test_total_expenditure_by_tag
-  #   result = @analysis.total_expenditure_by_tag('Food')
-  #   assert_equal(80, result)
-  # end
+  def test_total_expenditure_by_tag
+    result = @analysis.total_expenditure_by_tag(5)
+    assert_equal(80, result)
+  end
 
 end

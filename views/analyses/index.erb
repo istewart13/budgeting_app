@@ -10,4 +10,16 @@
 <br>
 
 Total transaction value: <%= @analysis.total_expenditure %>
+<br><br>
+
+<!-- <form action="/analyses" method="post">
+  <label for="total_by_tag">Total by tag:</label>
+  <select name="total_by_tag">
+  <% @transactions.each do |transaction| %>
+    <option value="<%= transaction.tag_id %>"><%= transaction.tag.name %></option>
+  <% end %>
+  </select>
+</form>
+
+Total transaction value by tag: <%= @analysis.total_expenditure_by_tag(2) %> -->
 

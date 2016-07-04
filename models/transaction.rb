@@ -30,8 +30,34 @@ class Transaction
     return Merchant.map_item(sql)
   end
 
+  # def update(options)
+  #   sql = "UPDATE transactions SET name = '#{name}' WHERE id = #{@id}"
+  #   return Merchant.map_items(sql)
+  # end
+
+  def delete()
+    Transaction.delete(@id)
+  end
+
   def self.all()
     sql = "SELECT * FROM transactions"
+    return Transaction.map_items(sql)
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM transactions WHERE id = #{id}"
+    return Transaction.map_item(sql)
+  end
+
+  def self.update(options)
+    sql = "UPDATE transactions 
+    SET merchant_id = '#{options['merchant_id']}', tag_id = '#{options['tag_id']}', value = '#{options['value']}', transaction_date = '#{options['transaction_date']}', description = '#{options['description']}' 
+    WHERE id = #{options['id']}"
+    return Transaction.map_item(sql)
+  end
+
+  def self.delete(id)
+    sql = "DELETE FROM transactions WHERE id = #{id}"
     return Transaction.map_items(sql)
   end
 

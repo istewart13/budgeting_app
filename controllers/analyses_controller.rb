@@ -6,3 +6,19 @@ get '/analyses' do
   @analysis = Analysis.new(@transactions)
   erb(:'analyses/index')
 end
+
+# post '/analyses' do 
+#   erb(:'analyses/create')
+#   # sleep 3
+#   # redirect to('/merchants') 
+# end
+
+# get "/analyses/:tag_id" do
+#   @merchant = Merchant.find(params[:id])
+#   erb(:'merchants/show')
+# end
+
+# get "/analyses/:tag_id" do
+#   @merchant = Merchant.find(params[:id])
+#   erb(:'merchants/show')
+# end
