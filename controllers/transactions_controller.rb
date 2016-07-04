@@ -34,7 +34,7 @@ end
 #   redirect to("/transactions/#{params[:id]}")
 # end
 
-# post "/transactions/:id/delete" do
-#   Transaction.delete(params[:id])
-#   redirect to('/transactions')
-# end
+post "/transactions/:id/delete" do
+  Transaction.delete(params[:id])
+  redirect to('/transactions')
+end
