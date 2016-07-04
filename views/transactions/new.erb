@@ -1,10 +1,33 @@
-<h1>Create a new transaction:</h1>
+<h2>Create a new transaction:</h2>
 
-<form action="/transaction" method="post">
-<!--   <label for="first_name">First Name:</label>
-  <input type="text" name="first_name">
-  <label for="last_name">Last Name:</label>
-  <input type="text" name="last_name">
+<form action="/transactions" method="post">
+  <label for="merchant_id">Merchant:</label>
+  <select name="merchant_id">
+  <% @merchants.each do |merchant| %>
+    <option value="<%= merchant.id %>"><%= merchant.name %></option>
+  <% end %>
+  </select>
 
-  <input type='submit' value="Order Pizza"> -->
+  <label for="tag_id">Tag:</label>
+  <select name="tag_id">
+  <% @tags.each do |tag| %>
+    <option value="<%= tag.id %>"><%= tag.name %></option>
+  <% end %>
+  </select>
+
+  <label for="value">Value (£):</label>
+  <input type="number" min="0.01" step="0.01" name="value" placeholder='0.00'>
+
+  <label for="transaction_date">Date:</label>
+  <input type="date" name="transaction_date" min="2010-01-01">
+
+  <label for="description">Description:</label>
+  <input type="text" size="80" maxlength="255" name="description">
+
+  <input type='submit' value="Create new transaction">
+
 </form>
+
+<br>
+<br>
+<a href="/">Back</a>
