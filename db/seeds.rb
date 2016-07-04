@@ -7,7 +7,7 @@ require_relative( '../models/analysis' )
 
 Merchant.delete_all()
 Tag.delete_all()
-# Transaction.delete_all()
+Transaction.delete_all()
 
 merchant1 = Merchant.new({'name' => 'Tesco'})
 merchant2 = Merchant.new({'name' => 'Argos'})
