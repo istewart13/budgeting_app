@@ -1,5 +1,6 @@
 require_relative('../models/analysis.rb')
 require_relative('../models/transaction.rb')
+require('pry-byebug')
 
 get '/analyses' do
   @transactions = Transaction.all()
@@ -7,18 +8,13 @@ get '/analyses' do
   erb(:'analyses/index')
 end
 
-# post '/analyses' do 
-#   erb(:'analyses/create')
-#   # sleep 3
-#   # redirect to('/merchants') 
-# end
+post '/analyses' do 
+  redirect to("/analyses/#{params[:tag_id]}")
+end
 
-# get "/analyses/:tag_id" do
-#   @merchant = Merchant.find(params[:id])
-#   erb(:'merchants/show')
-# end
-
-# get "/analyses/:tag_id" do
-#   @merchant = Merchant.find(params[:id])
-#   erb(:'merchants/show')
-# end
+get "/analyses/:tag_id" do
+  'hello'
+  # @transactions = Transaction.find(params[:tag_id])
+  # @analysis = Analysis.new(@transactions)
+  # erb(:'analyses/show')
+end

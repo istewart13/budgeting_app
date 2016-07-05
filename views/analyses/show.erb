@@ -1,0 +1,9 @@
+<% @transactions.each do |transaction| %>
+  ID: <%= transaction.id %>
+  Merchant: <%= transaction.merchant.name %>
+  Tag: <%= transaction.tag.name %>
+  Value: <%= transaction.value %>
+  Date: <%= transaction.transaction_date %>
+  Description: <%= transaction.description %>
+  <br>
+<% end %>

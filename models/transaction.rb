@@ -49,6 +49,12 @@ class Transaction
     return Transaction.map_item(sql)
   end
 
+# REMOVE IF NOT USED
+  def self.find(tag_id)
+    sql = "SELECT * FROM transactions WHERE tag_id = #{tag_id}"
+    return Transaction.map_item(sql)
+  end
+
   def self.update(options)
     sql = "UPDATE transactions 
     SET merchant_id = '#{options['merchant_id']}', tag_id = '#{options['tag_id']}', value = '#{options['value']}', transaction_date = '#{options['transaction_date']}', description = '#{options['description']}' 
