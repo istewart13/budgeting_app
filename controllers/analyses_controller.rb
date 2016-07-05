@@ -2,7 +2,6 @@ require_relative('../models/analysis.rb')
 require_relative('../models/transaction.rb')
 require('pry-byebug')
 require('json')
-require('pp')
 
 get '/analyses' do
   @transactions = Transaction.all()
@@ -20,7 +19,7 @@ get "/analyses/:tag_id" do
   erb(:'analyses/show')
 end
 
-get '/all' do 
+get '/json' do 
   content_type(:json)
   @transactions = Transaction.all()
   results = @transactions
