@@ -79,6 +79,22 @@ class Transaction
     return Transaction.map_items(sql)
   end
 
+  def self.find_values(category)
+    case category
+    when "1"
+      sql = "SELECT * FROM transactions WHERE value BETWEEN 0 AND 50"
+    when "2"
+      sql = "SELECT * FROM transactions WHERE value BETWEEN 50.01 AND 100"
+    when "3"
+      sql = "SELECT * FROM transactions WHERE value BETWEEN 100.01 AND 500"
+    when "4"
+      sql = "SELECT * FROM transactions WHERE value BETWEEN 500.01 AND 1000"
+    when "5"
+      sql = "SELECT * FROM transactions WHERE value > 1000"
+    end
+    return Transaction.map_items(sql)
+  end
+
   def self.update(options)
     sql = "UPDATE transactions 
     SET merchant_id = '#{options['merchant_id']}', tag_id = '#{options['tag_id']}', value = '#{options['value']}', transaction_date = '#{options['transaction_date']}', description = '#{options['description']}' 

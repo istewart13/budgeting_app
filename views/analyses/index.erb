@@ -42,6 +42,48 @@ Total transaction value: <b><%= @analysis.total_expenditure.round(2) %></b>
   <input type='submit' value="Search by tag">
 </form>
 
+
+
+
+
+
+
+<b>Filter transactions by value:</b>
+
+<form action="/value" method="post">
+  <label for="value">Filter by value:</label>
+  <select name="value">
+    <option value="1">£0 - £50</option>
+    <option value="2">>£50 - £100</option>
+    <option value="3">>£100 - £500</option>
+    <option value="4">>£500 - £1000</option>
+    <option value="5">> £1000</option>
+  </select>
+
+  <input type='submit' value="Search by value">
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <br>
 <b>View as</b>
 <a href="/json">JSON</a><br>

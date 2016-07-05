@@ -19,6 +19,23 @@ get '/analyses/:tag_id' do
   erb(:'analyses/show')
 end
 
+
+
+
+post '/value' do 
+  redirect to("/value/#{params[:value]}")
+end
+
+get '/value/:value' do
+  @transactions = Transaction.find_values(params[:value])
+  @analysis = Analysis.new(@transactions)
+  erb(:'analyses/show')
+end
+
+
+
+
+
 get '/json' do 
   content_type(:json)
   @transactions = Transaction.all()
