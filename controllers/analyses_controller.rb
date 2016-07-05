@@ -13,7 +13,7 @@ post '/analyses' do
   redirect to("/analyses/#{params[:tag_id]}")
 end
 
-get "/analyses/:tag_id" do
+get '/analyses/:tag_id' do
   @transactions = Transaction.find_tag(params[:tag_id])
   @analysis = Analysis.new(@transactions)
   erb(:'analyses/show')
@@ -24,4 +24,13 @@ get '/json' do
   @transactions = Transaction.all()
   results = @transactions
   return JSON.pretty_generate(results)
+end
+
+get '/json/download' do 
+  content_type(:json)
+  @transactions = Transaction.all()
+  results = @transactions
+  # JSON.pretty_generate(results)
+  File.open("transactions.json","w") { |file|
+    file.write(JSON.pretty_generate(results)) } 
 end
