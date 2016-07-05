@@ -1,15 +1,32 @@
-<% @transactions.each do |transaction| %>
-  ID: <%= transaction.id %>
-  Merchant: <%= transaction.merchant.name %>
-  Tag: <%= transaction.tag.name %>
-  Value: <%= transaction.value %>
-  Date: <%= transaction.transaction_date %>
-  Description: <%= transaction.description %>
-  <br>
-<% end %>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Merchant</th>
+      <th>Tag</th>
+      <th>Value</th>
+      <th>Date</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <% @transactions.each do |transaction| %>
+    <tr>
+      <td><%= transaction.id %></td>
+      <td><%= transaction.merchant.name %></td>
+      <td><%= transaction.tag.name %></td>
+      <td><%= transaction.value %></td>
+      <td><%= transaction.transaction_date %></td>
+      <td><%= transaction.description %></td>
+    </tr>
+    <% end %>
+
+  </tbody>
+</table>
 <br>
 
-Total transaction value: <%= @analysis.total_expenditure.round(2) %>
+Total transaction value: <b><%= @analysis.total_expenditure.round(2) %></b>
 <br><br>
 
 <b>Filter transactions by tag:</b>

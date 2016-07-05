@@ -1,6 +1,5 @@
 require_relative('transaction')
 require('pry-byebug')
-# require 'googlecharts'
 
 class Analysis
 
