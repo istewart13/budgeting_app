@@ -7,5 +7,6 @@
   Value: <%= transaction.value %>
   Date: <%= transaction.transaction_date %>
   Description: <%= transaction.description %>
+  <a href="/transactions/<%= transaction.id %>">View</a>
   <br>
 <% end %>

@@ -30,7 +30,6 @@ get '/json/download' do
   content_type(:json)
   @transactions = Transaction.all()
   results = @transactions
-  # JSON.pretty_generate(results)
   File.open("transactions.json","w") { |file|
     file.write(JSON.pretty_generate(results)) } 
 end

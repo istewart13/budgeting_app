@@ -1,5 +1,6 @@
 require_relative('transaction')
 require('pry-byebug')
+# require 'googlecharts'
 
 class Analysis
 
@@ -7,10 +8,10 @@ class Analysis
     @transactions = transactions
   end
 
-def total_expenditure
-  total = 0
-  @transactions.each { |transaction| total += transaction.value } 
-  return total
+  def total_expenditure()
+    total = 0
+    @transactions.each { |transaction| total += transaction.value } 
+    return total
   end
 
 end
