@@ -3,9 +3,15 @@
 <form action="/analyses" method="post">
   <label for="total_by_tag">Total by tag:</label>
   <select name="total_by_tag">
-  <% @transactions.each do |transaction| %>
+
+<!--   
+    <% @transactions = @transactions.uniq { |transaction| transaction.tag_id } %>
+ -->
+
+    <% @transactions.each do |transaction| %>
     <option value="<%= transaction.tag_id %>"><%= transaction.tag.name %></option>
-  <% end %>
+    <% end %>
+
   </select>
 
   <input type='submit' value="Search by tag">

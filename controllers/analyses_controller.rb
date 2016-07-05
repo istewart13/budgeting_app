@@ -13,8 +13,7 @@ post '/analyses' do
 end
 
 get "/analyses/:tag_id" do
-  'hello'
-  # @transactions = Transaction.find(params[:tag_id])
-  # @analysis = Analysis.new(@transactions)
-  # erb(:'analyses/show')
+  @transactions = Transaction.find_tag(params[:tag_id])
+  @analysis = Analysis.new(@transactions)
+  erb(:'analyses/show')
 end

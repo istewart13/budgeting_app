@@ -49,10 +49,9 @@ class Transaction
     return Transaction.map_item(sql)
   end
 
-# REMOVE IF NOT USED
-  def self.find(tag_id)
+  def self.find_tag(tag_id)
     sql = "SELECT * FROM transactions WHERE tag_id = #{tag_id}"
-    return Transaction.map_item(sql)
+    return Transaction.map_items(sql)
   end
 
   def self.update(options)

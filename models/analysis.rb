@@ -13,10 +13,10 @@ def total_expenditure
   return total
 end
 
-def total_expenditure_by_tag(tag)
-  total = 0
-  @transactions.each { |transaction| total += transaction.value if transaction.tag_id == tag }
-  return total
-end
+# def total_expenditure_by_tag(tag)
+#   total = 0
+#   @transactions.each { |transaction| total += transaction.value if transaction.tag_id == tag }
+#   return total
+# end
 
 end
