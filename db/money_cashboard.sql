@@ -4,7 +4,7 @@ DROP TABLE tags;
 
 CREATE TABLE merchants (
   id serial4 PRIMARY KEY,
-  name VARCHAR(255) NOT NULL
+  name VARCHAR(255) NOT NULL 
 );
 
 CREATE TABLE tags (

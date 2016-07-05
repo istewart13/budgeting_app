@@ -33,5 +33,5 @@ get '/json/download' do
   File.open("transactions.json","w") { |file|
     file.write(JSON.pretty_generate(results)) } 
     content_type(:html)
-    erb(:'analyses/create')
+    erb(:'analyses/create') 
 end
