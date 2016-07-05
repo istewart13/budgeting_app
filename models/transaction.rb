@@ -39,6 +39,31 @@ class Transaction
     Transaction.delete(@id)
   end
 
+  # def to_json(options)
+  #     {'id' => @id,
+  #      'merchant_id' => @merchant_id,
+  #      'tag_id' => @tag_id,
+  #      'value' => @value,
+  #      'transaction_date' => @transaction_date,
+  #      'description' => @description}.to_json
+  # end
+
+  def to_json(*args)
+    {'json_class' => self.class.name,
+      'data' => {
+        'id' => @id,
+        'merchant_id' => @merchant_id,
+        'tag_id' => @tag_id,
+        'value' => @value,
+        'transaction_date' => @transaction_date,
+        'description' => @description }
+      }.to_json(*args)
+    end
+
+    # def self.json_create(o)
+    #   new(o["data"]['id'], o["data"]['merchant_id'],  o["data"]['tag_id'], o["data"]['value'], o["data"]['transaction_date'], o["data"]['description'])
+    # end
+
   def self.all()
     sql = "SELECT * FROM transactions"
     return Transaction.map_items(sql)
