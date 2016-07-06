@@ -79,6 +79,11 @@ class Transaction
     return Transaction.map_items(sql)
   end
 
+  def self.find_merchant(merchant_id)
+    sql = "SELECT * FROM transactions WHERE merchant_id = #{merchant_id}"
+    return Transaction.map_items(sql)
+  end
+
   def self.find_values(category)
     case category
     when "1"
@@ -94,10 +99,6 @@ class Transaction
     end
     return Transaction.map_items(sql)
   end
-
-
-  # SELECT to_date(#{start_date}, 'DDMonYY');
-  # SELECT to_date(#{end_date}, 'DDMonYY');
 
   def self.find_dates(start_date, end_date)
     sql = "SELECT * FROM transactions WHERE transaction_date BETWEEN to_date('#{start_date}', 'YYYY MM DD') AND to_date('#{end_date}', 'YYYY MM DD')"

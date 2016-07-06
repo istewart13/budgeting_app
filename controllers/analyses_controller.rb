@@ -19,6 +19,16 @@ get '/analyses/:tag_id' do
   erb(:'analyses/show')
 end
 
+post '/merchant' do 
+  redirect to("/merchant/#{params[:merchant_id]}")
+end
+
+get '/merchant/:merchant_id' do
+  @transactions = Transaction.find_merchant(params[:merchant_id])
+  @analysis = Analysis.new(@transactions)
+  erb(:'analyses/show')
+end
+
 post '/value' do 
   redirect to("/value/#{params[:value]}")
 end
