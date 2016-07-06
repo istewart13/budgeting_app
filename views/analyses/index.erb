@@ -37,10 +37,17 @@
 <form action="/merchant" method="post">
   <label for="merchant_id">Total by merchant:</label>
   <select name="merchant_id">
-  <% @transactions.each do |transaction| %>
-    <option value="<%= transaction.merchant_id %>"><%= transaction.merchant.name %></option>
-  <% end %>
-  </select>
+    
+    <% merchant_array = [] %>
+    <% @transactions.each do |transaction| %>
+
+    <% if !merchant_array.include?(transaction.merchant_id) %>
+    <option value="<%= transaction.merchant_id %>">
+      <%= transaction.merchant.name %></option>
+      <% end %>
+      <% merchant_array << transaction.merchant_id %>
+      <% end %>
+    </select>
 
   <input type='submit' value="Search by merchant">
 </form>
@@ -51,10 +58,18 @@
 <form action="/analyses" method="post">
   <label for="tag_id">Total by tag:</label>
   <select name="tag_id">
-  <% @transactions.each do |transaction| %>
-    <option value="<%= transaction.tag_id %>"><%= transaction.tag.name %></option>
-  <% end %>
-  </select>
+
+    <% tag_array = [] %>
+    <% @transactions.each do |transaction| %>
+
+    <% if !tag_array.include?(transaction.tag_id) %>
+    <option value="<%= transaction.tag_id %>">
+      <%= transaction.tag.name %></option>
+      <% end %>
+      <% tag_array << transaction.tag_id %>
+
+      <% end %>
+    </select>
 
   <input type='submit' value="Search by tag">
 </form>
