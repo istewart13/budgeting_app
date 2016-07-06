@@ -1,6 +1,20 @@
-<a href="/merchants/new">Add new merchant</a><br>
+<table class="table-centre" id="merchant-table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Merchant</th>
+      <th scope="col">View</th>
+    </tr>
+  </thead>
+  <tbody>
 
 <% @merchants.each do |merchant| %>
-  Name: <%= merchant.name %>
-  <a href="/merchants/<%= merchant.id %>">View</a> <br>
-<% end %>
+  <tr>
+    <td><%= merchant.id %></td>
+    <td><%= merchant.name %></td>
+    <td><a href="/merchants/<%= merchant.id %>">View</a></td>
+  </tr>
+  <% end %>
+</tbody>
+
+<div><a id="add-merchant" href="/merchants/new">Add new merchant</a><div>
