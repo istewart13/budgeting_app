@@ -20,7 +20,7 @@ class Merchant
   def save_check()
     sql = "INSERT INTO merchants (name) SELECT DISTINCT '#{@name}'
     FROM merchants
-    WHERE NOT EXISTS (SELECT name FROM merchants WHERE name = '#{@name}') RETURNING *;"
+    WHERE NOT EXISTS (SELECT name FROM merchants WHERE LOWER(name) = LOWER('#{@name}')) RETURNING *;"
     merchant = run(sql).first
     if merchant != nil
       result = Merchant.new(merchant)

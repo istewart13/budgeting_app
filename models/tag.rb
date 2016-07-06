@@ -1,5 +1,4 @@
 require_relative('../db/sql_runner')
-require('pry-byebug')
 
 class Tag
 
@@ -21,7 +20,6 @@ class Tag
     sql = "INSERT INTO tags (name) SELECT DISTINCT '#{@name}'
     FROM tags
     WHERE NOT EXISTS (SELECT name FROM tags WHERE LOWER(name) = LOWER('#{@name}')) RETURNING *;"
-    # binding.pry
     tag = run(sql).first
     if tag != nil
       result = Tag.new(tag)
