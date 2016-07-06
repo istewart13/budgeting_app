@@ -1,2 +1,6 @@
 <meta http-equiv="refresh" content="4; url='/tags'"/>
+<% if @tag_exists != false %>
 <h5>Successfully added: <%= @tag.name() %></h5>
+<% else %>
+<h5>That tag already exists, and so has not been added to the list.</h5>
+<% end %>

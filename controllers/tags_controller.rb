@@ -11,7 +11,7 @@ end
 
 post '/tags' do 
   @tag = Tag.new(params)
-  @tag.save
+  @tag_exists = @tag.save_check
   erb(:'tags/create')
 end
 

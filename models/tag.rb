@@ -16,6 +16,19 @@ class Tag
     return result
   end
 
+  def save_check()
+    sql = "INSERT INTO tags (name) SELECT DISTINCT '#{@name}'
+    FROM tags
+    WHERE NOT EXISTS (SELECT name FROM tags WHERE name = '#{@name}') RETURNING *;"
+    tag = run(sql).first
+    if tag != nil
+      result = Tag.new(tag)
+      return result
+    else
+      return false
+    end
+  end
+
   def merchants()
     sql = "SELECT merchants.* FROM merchants INNER JOIN transactions ON transactions.merchant_id = merchants.id WHERE tag_id = #{@id};"
     return Merchant.map_items(sql)
