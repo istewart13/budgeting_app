@@ -1,0 +1,128 @@
+body {
+  background: white;
+  font: 16px "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+
+/* --- TYPOGRAPHY --- */
+h1, h2, h3, h4 {
+  color: #648880;
+}
+
+h1, h3, h4, h5, p {
+  margin-bottom: 22px;
+}
+
+h1 {
+  font-size: 36px;
+  line-height: 44px;
+}
+
+h2 {
+  font-size: 24px;
+  line-height: 44px;
+}
+
+h3 {
+  font-size: 21px;
+}
+
+h4 {
+  font-size: 18px;
+}
+
+h5 {
+  color: #a9b2b9;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+strong {
+  font-weight: 400;
+}
+
+em {
+  font-style: italic;
+}
+
+
+/* --- TABLE STYLING --- */
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  color: #4a4a4d;
+  font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+th, td {
+  padding: 10px 15px;
+  vertical-align: middle;
+}
+
+thead {
+  background: #395870;
+  color: #fff;
+}
+
+th:first-child {
+  text-align: left;
+}
+
+tbody tr:nth-child(even) {
+  background: #f0f0f2;
+}
+
+td {
+  border-bottom: 1px solid #cecfd5;
+  border-right: 1px solid #cecfd5;
+}
+
+td:first-child {
+  border-left: 1px solid #cecfd5;
+}
+
+tfoot {
+  text-align: right;
+}
+
+tfoot tr:last-child {
+  background: #f0f0f2;
+}
+
+
+/* --- LINKS --- */
+a {
+  color: #648880;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #a9b2b9;
+}
+
+
+/* --- BUTTONS --- */
+.btn {
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 400;
+  letter-spacing: .5px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+
+/* --- LOGO --- */
+.logo {
+  border-top: 4px solid #648880;
+  float: left;
+  font-size: 48px;
+  font-weight: 100;
+  letter-spacing: .5px;
+  line-height: 44px;
+  padding: 40px 0 22px 0;
+  text-transform: uppercase;
+}

@@ -2,16 +2,41 @@
 <html>
 <head>
   <title>Money Ca$hboard</title>
-  <link rel="stylesheet" type="text/css" href="css/normalize.css">
-  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="/normalize.css">
+  <link rel="stylesheet" type="text/css" href="/style.css">
 </head>
 <body>
-  <nav>
-    <a href="/merchants">Merchants</a>
-    <a href="/tags">Tags</a>
-    <a href="/transactions">Transactions</a>
-    <a href="/analyses">Analysis</a>
-  </nav>
+
+
+
+  <header>
+
+    <h1 class="logo">
+      <img src="/cube-logo.jpg">
+    </h1>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/merchants">Merchants</a></li>
+        <li><a href="/tags">Tags</a></li>
+        <li><a href="/transactions">Transactions</a></li>
+        <li><a href="/analyses">Analysis</a></li>
+      </ul>
+    </nav>
+  </header>
   <%= yield %>
+
+  <footer>
+    <small>&copy; Money Cashboard</small>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/merchants">Merchants</a></li>
+        <li><a href="/tags">Tags</a></li>
+        <li><a href="/transactions">Transactions</a></li>
+        <li><a href="/analyses">Analysis</a></li>
+      </ul>
+    </nav>
+  </footer>
 </body>
 </html>
