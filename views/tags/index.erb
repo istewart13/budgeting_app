@@ -1,6 +1,20 @@
-<a href="/tags/new">Add new tag</a><br>
+<table class="table-centre" id="tag-table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Tag</th>
+      <th scope="col">View</th>
+    </tr>
+  </thead>
+  <tbody>
 
 <% @tags.each do |tag| %>
-  Name: <%= tag.name %>
-  <a href="/tags/<%= tag.id %>">View</a> <br>
-<% end %>
+  <tr>
+    <td><%= tag.id %></td>
+    <td><%= tag.name %></td>
+    <td><a href="/tags/<%= tag.id %>">View</a></td>
+  </tr>
+  <% end %>
+</tbody>
+
+<div><a id="add-tag" href="/tags/new">Add new tag</a><div>

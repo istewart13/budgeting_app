@@ -1,6 +1,27 @@
-<b>Tag Name:</b>
+<!-- <b>Tag Name:</b>
 <p><%= @tag.name() %>
 <a href="/tags/<%= @tag.id %>/edit">Edit</a>
 <form action="/tags/<%= @tag.id %>/delete" method="post">
   <input type="submit" value="Delete">
-</form></p>
+</form></p> -->
+
+<table class="table-centre" id="tag-table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+
+  <tr>
+    <td><%= @tag.name() %></td>
+    <td><a href="/tags/<%= @tag.id %>/edit">Edit</a></td>
+    <td><form action="/tags/<%= @tag.id %>/delete" method="post">
+      <input type="submit" value="Delete">
+    </form></td>
+  </tr>
+</tbody>
+
+<div><a id="back" href="/tags">Back</a><div>

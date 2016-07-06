@@ -1,6 +1,20 @@
-<b>Merchant Name:</b>
-<p><%= @merchant.name() %>
-<a href="/merchants/<%= @merchant.id %>/edit">Edit</a>
-<form action="/merchants/<%= @merchant.id %>/delete" method="post">
-  <input type="submit" value="Delete">
-</form></p>
+<table class="table-centre" id="merchant-table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+
+  <tr>
+    <td><%= @merchant.name() %></td>
+    <td><a href="/merchants/<%= @merchant.id %>/edit">Edit</a></td>
+    <td><form action="/merchants/<%= @merchant.id %>/delete" method="post">
+      <input type="submit" value="Delete">
+    </form></td>
+  </tr>
+</tbody>
+
+<div><a id="back" href="/merchants">Back</a><div>
