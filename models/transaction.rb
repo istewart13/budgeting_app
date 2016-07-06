@@ -105,6 +105,11 @@ class Transaction
     return Transaction.map_items(sql)
   end
 
+  def self.find_description(description)
+    sql = "SELECT * FROM transactions WHERE description LIKE '%#{description}%'"
+    return Transaction.map_items(sql)
+  end
+
   def self.update(options)
     sql = "UPDATE transactions 
     SET merchant_id = '#{options['merchant_id']}', tag_id = '#{options['tag_id']}', value = '#{options['value']}', transaction_date = '#{options['transaction_date']}', description = '#{options['description']}' 

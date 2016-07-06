@@ -49,9 +49,15 @@ get '/date/:transaction_date1/:transaction_date2' do
   erb(:'analyses/show')
 end
 
+post '/description' do 
+  redirect to("/description/#{params[:description]}")
+end
 
-
-
+get '/description/:description' do
+  @transactions = Transaction.find_description(params[:description])
+  @analysis = Analysis.new(@transactions)
+  erb(:'analyses/show')
+end
 
 get '/json' do 
   content_type(:json)
