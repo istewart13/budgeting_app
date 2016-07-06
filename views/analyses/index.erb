@@ -1,12 +1,12 @@
 <table>
   <thead>
     <tr>
-      <th>ID</th>
-      <th>Merchant</th>
-      <th>Tag</th>
-      <th>Value</th>
-      <th>Date</th>
-      <th>Description</th>
+      <th scope="col">ID</th>
+      <th scope="col">Merchant</th>
+      <th scope="col">Tag</th>
+      <th scope="col">Value</th>
+      <th scope="col">Date</th>
+      <th scope="col">Description</th>
     </tr>
   </thead>
   <tbody>
@@ -21,12 +21,15 @@
       <td><%= transaction.description %></td>
     </tr>
     <% end %>
+    <tr>
+      <td colspan="3"><b>Total transaction value:</b></td>
+      <td><b><%= @analysis.total_expenditure.round(2) %></b></td>
+    </tr>
 
   </tbody>
 </table>
 <br>
 
-<p>Total transaction value: <b><%= @analysis.total_expenditure.round(2) %></b>
 <b>View as</b>
 <a href="/json">JSON</a>
 <b>Download</b>
