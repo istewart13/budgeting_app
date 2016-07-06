@@ -9,12 +9,13 @@
 
 
 
-  <header class="head">
-    <h1 class="logo">
-      <p>Money Ca$hboard</p>
+  <div class="header">
+  <header>
+    <span class="logo">
       <img src="/cube-logo.jpg">
-    </h1>
+    </span>
     <nav class="nav">
+    <span class="title">Money Ca$hboard</span>
       <ul>
         <li><a href="/">Home</a></li>
         <li><a href="/merchants">Merchants</a></li>
@@ -24,11 +25,11 @@
       </ul>
     </nav>
   </header>
+  </div>
   <%= yield %>
 
   <footer>
-    <small>&copy; Money Cashboard</small>
-    <nav class="nav">
+    <nav class="nav bottom">
       <ul>
         <li><a href="/">Home</a></li>
         <li><a href="/merchants">Merchants</a></li>
@@ -36,7 +37,9 @@
         <li><a href="/transactions">Transactions</a></li>
         <li><a href="/analyses">Analysis</a></li>
       </ul>
+      <small class="copy">&copy; Money Cashboard</small>
     </nav>
+    
   </footer>
 </body>
 </html>

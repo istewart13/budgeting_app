@@ -3,6 +3,13 @@ body {
   font: 16px "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+.home {
+  clear: both;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 90px; 
+}
+
 
 /* --- TYPOGRAPHY --- */
 h1, h2, h3, h4 {
@@ -48,11 +55,18 @@ em {
 
 
 /* --- TABLE STYLING --- */
+table.table-centre {
+  width:70%; 
+  margin-left:15%; 
+  margin-right:15%;
+}
+
 table {
   border-collapse: separate;
   border-spacing: 0;
   color: #4a4a4d;
   font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  clear: both;
 }
 
 th, td {
@@ -118,13 +132,25 @@ a:hover {
 /* --- LOGO --- */
 .logo {
   float: left;
-  font-size: 48px;
-  font-weight: 100;
-  padding: 0px 0 0px 0;
-  text-transform: uppercase;
-/*  display: inline-block;
-  margin: 0 10px;
-  vertical-align: top;*/
+  padding-left: 10px;
+  position: relative;
+  top: -10px;
+}
+
+.logo img {
+  height: 70px;
+  width: 70px;
+}
+
+.title {
+    float: left;
+    font-size: 36px;
+    font-weight: 200;
+    text-transform: uppercase;
+    padding-left: 10px;
+    color: #648880;
+    position: relative;
+    top: -10px;
 }
 
 /* --- FOOTER --- */
@@ -143,14 +169,23 @@ footer {
   background: lightgrey;
 }
 
+small.copy {
+  text-align: center;
+}
+
 /* --- NAVIGATION --- */
 .nav {
   text-align: right;
+  padding-right: 10px;
+}
+
+.nav.bottom {
+  text-align: center;
 }
 
 .nav li {
   display: inline-block;
-  margin: 0 10px;
+  margin-left: 50px;
   vertical-align: top;
   font-size: 16px;
 }
