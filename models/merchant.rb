@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner')
+require('pry-byebug')
 
 class Merchant
 
@@ -14,6 +15,19 @@ class Merchant
     merchant = run(sql).first
     result = Merchant.new(merchant)
     return result
+  end
+
+  def save_check()
+    sql = "INSERT INTO merchants (name) SELECT DISTINCT '#{@name}'
+    FROM merchants
+    WHERE NOT EXISTS (SELECT name FROM merchants WHERE name = '#{@name}') RETURNING *;"
+    merchant = run(sql).first
+    if merchant != nil
+      result = Merchant.new(merchant)
+      return result
+    else
+      return false
+    end
   end
 
   def tags()

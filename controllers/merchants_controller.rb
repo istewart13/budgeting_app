@@ -11,7 +11,7 @@ end
 
 post '/merchants' do 
   @merchant = Merchant.new(params)
-  @merchant.save
+  @merchant_exists = @merchant.save_check
   erb(:'merchants/create')
 end
 

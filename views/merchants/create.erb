@@ -1,2 +1,6 @@
 <meta http-equiv="refresh" content="4; url='/merchants'"/>
+<% if @merchant_exists != false %>
 <h5>Successfully added: <%= @merchant.name() %></h5>
+<% else %>
+<h5>That merchant already exists, and so has not been added to the list.</h5>
+<% end %>
