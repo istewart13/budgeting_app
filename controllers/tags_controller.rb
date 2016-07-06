@@ -13,8 +13,6 @@ post '/tags' do
   @tag = Tag.new(params)
   @tag.save
   erb(:'tags/create')
-  # sleep 3
-  # redirect to('/tags') 
 end
 
 get "/tags/:id" do

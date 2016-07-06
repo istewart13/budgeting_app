@@ -15,8 +15,6 @@ post '/transactions' do
   @transaction = Transaction.new(params)
   @transaction.save
   erb(:'transactions/create')
-  # sleep 3
-  # redirect to('/transactions')
 end
 
 get "/transactions/:id" do

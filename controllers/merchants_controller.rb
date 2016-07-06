@@ -13,8 +13,6 @@ post '/merchants' do
   @merchant = Merchant.new(params)
   @merchant.save
   erb(:'merchants/create')
-  # sleep 3
-  # redirect to('/merchants') 
 end
 
 get "/merchants/:id" do
