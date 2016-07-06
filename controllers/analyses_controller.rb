@@ -19,15 +19,22 @@ get '/analyses/:tag_id' do
   erb(:'analyses/show')
 end
 
-
-
-
 post '/value' do 
   redirect to("/value/#{params[:value]}")
 end
 
 get '/value/:value' do
   @transactions = Transaction.find_values(params[:value])
+  @analysis = Analysis.new(@transactions)
+  erb(:'analyses/show')
+end
+
+post '/date' do 
+  redirect to("/date/#{params[:transaction_date1]}/#{params[:transaction_date2]}")
+end
+
+get '/date/:transaction_date1/:transaction_date2' do
+  @transactions = Transaction.find_dates(params[:transaction_date1].to_s, params[:transaction_date2].to_s)
   @analysis = Analysis.new(@transactions)
   erb(:'analyses/show')
 end

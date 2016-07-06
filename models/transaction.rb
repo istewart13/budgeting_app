@@ -95,6 +95,15 @@ class Transaction
     return Transaction.map_items(sql)
   end
 
+
+  # SELECT to_date(#{start_date}, 'DDMonYY');
+  # SELECT to_date(#{end_date}, 'DDMonYY');
+
+  def self.find_dates(start_date, end_date)
+    sql = "SELECT * FROM transactions WHERE transaction_date BETWEEN to_date('#{start_date}', 'YYYY MM DD') AND to_date('#{end_date}', 'YYYY MM DD')"
+    return Transaction.map_items(sql)
+  end
+
   def self.update(options)
     sql = "UPDATE transactions 
     SET merchant_id = '#{options['merchant_id']}', tag_id = '#{options['tag_id']}', value = '#{options['value']}', transaction_date = '#{options['transaction_date']}', description = '#{options['description']}' 

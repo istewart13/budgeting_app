@@ -16,7 +16,7 @@
       <td><%= transaction.id %></td>
       <td><%= transaction.merchant.name %></td>
       <td><%= transaction.tag.name %></td>
-      <td><%= transaction.value %></td>
+      <td><%= "%.2f" % transaction.value %></td>
       <td><%= transaction.transaction_date %></td>
       <td><%= transaction.description %></td>
     </tr>
@@ -42,12 +42,6 @@ Total transaction value: <b><%= @analysis.total_expenditure.round(2) %></b>
   <input type='submit' value="Search by tag">
 </form>
 
-
-
-
-
-
-
 <b>Filter transactions by value:</b>
 
 <form action="/value" method="post">
@@ -63,26 +57,15 @@ Total transaction value: <b><%= @analysis.total_expenditure.round(2) %></b>
   <input type='submit' value="Search by value">
 </form>
 
+<b>Filter transactions between dates:</b>
 
+<form action="/date" method="post">
+  <label for="transaction_date">Filter by date:</label>
+  <input type="date" name="transaction_date1" min="2010-01-01">
+  <input type="date" name="transaction_date2" min="2010-01-01">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  <input type='submit' value="Search by value">
+</form>
 
 <br>
 <b>View as</b>
