@@ -1,12 +1,33 @@
-<% @transactions.each do |transaction| %>
-  ID: <%= transaction.id %>
-  Merchant: <%= transaction.merchant.name %>
-  Tag: <%= transaction.tag.name %>
-  Value: <%= transaction.value %>
-  Date: <%= transaction.transaction_date %>
-  Description: <%= transaction.description %>
-  <br>
-<% end %>
-<br>
+<table class="table-centre" id="analysis-table">
+  <thead>
+    <tr>
+      <th id="centre-id" scope="col">ID</th>
+      <th scope="col">Merchant</th>
+      <th scope="col">Tag</th>
+      <th scope="col">Value</th>
+      <th scope="col">Date</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
 
-Total transaction value: <%= @analysis.total_expenditure.round(2) %>
+  <% @transactions.each do |transaction| %>
+  <tr>
+    <td><%= transaction.id() %></td>
+    <td><%= transaction.merchant.name %></td>
+    <td><%= transaction.tag.name %></td>
+    <td><%= transaction.value %></td>
+    <td><%= transaction.transaction_date %></td>
+    <td><%= transaction.description %></td>
+  </tr>
+  <% end %>
+  <tr>
+    <td colspan="3"><b>Total transaction value</b></td>
+    <td><b><%= @analysis.total_expenditure.round(2) %></b></td>
+  </tr>
+
+</tbody>
+
+<br><br>
+<div><a id="analysis-back" href="/analyses">Back</a><div>
+<br><br>

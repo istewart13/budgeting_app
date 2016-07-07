@@ -1,4 +1,4 @@
-<table>
+<table class="table-centre">
   <thead>
     <tr>
       <th scope="col">ID</th>
@@ -30,83 +30,86 @@
 </table>
 <br>
 
-<b>View as</b>
-<a href="/json">JSON</a>
-<b>Download</b>
-<a href="/json/download">JSON</a>
-<p>
-
-<b>Filter transactions by merchant:</b>
-<form action="/merchant" method="post">
-  <label for="merchant_id">Total by merchant:</label>
-  <select name="merchant_id">
-    
-    <% merchant_array = [] %>
-    <% @transactions.each do |transaction| %>
-
-    <% if !merchant_array.include?(transaction.merchant_id) %>
-    <option value="<%= transaction.merchant_id %>">
-      <%= transaction.merchant.name %></option>
-      <% end %>
-      <% merchant_array << transaction.merchant_id %>
-      <% end %>
-    </select>
-
-  <input class="btn" type='submit' value="Search by merchant">
-</form>
-
+<div id="analysis-options">
 <br>
-<b>Filter transactions by tag:</b>
+  <b>View as</b>
+  <a href="/json">JSON</a>
+  <b>Download</b>
+  <a href="/json/download">JSON</a>
+  <br><br><br>
 
-<form action="/analyses" method="post">
-  <label for="tag_id">Total by tag:</label>
-  <select name="tag_id">
+  <b>Filter transactions by merchant:</b>
+  <form action="/merchant" method="post">
+    <label for="merchant_id">Total by merchant:</label>
+    <select name="merchant_id">
 
-    <% tag_array = [] %>
-    <% @transactions.each do |transaction| %>
+      <% merchant_array = [] %>
+      <% @transactions.each do |transaction| %>
 
-    <% if !tag_array.include?(transaction.tag_id) %>
-    <option value="<%= transaction.tag_id %>">
-      <%= transaction.tag.name %></option>
-      <% end %>
-      <% tag_array << transaction.tag_id %>
+      <% if !merchant_array.include?(transaction.merchant_id) %>
+      <option value="<%= transaction.merchant_id %>">
+        <%= transaction.merchant.name %></option>
+        <% end %>
+        <% merchant_array << transaction.merchant_id %>
+        <% end %>
+      </select>
 
-      <% end %>
-    </select>
+      <input class="btn" type='submit' value="Search by merchant">
+    </form>
 
-  <input class="btn"type='submit' value="Search by tag">
-</form>
+    <br>
+    <b>Filter transactions by tag:</b>
 
-<br>
-<b>Filter transactions by value:</b>
-<form action="/value" method="post">
-  <label for="value">Filter by value:</label>
-  <select name="value">
-    <option value="1">£0 - £50</option>
-    <option value="2">>£50 - £100</option>
-    <option value="3">>£100 - £500</option>
-    <option value="4">>£500 - £1000</option>
-    <option value="5">> £1000</option>
-  </select>
+    <form action="/analyses" method="post">
+      <label for="tag_id">Total by tag:</label>
+      <select name="tag_id">
 
-  <input class="btn"type='submit' value="Search by value">
-</form>
+        <% tag_array = [] %>
+        <% @transactions.each do |transaction| %>
 
-<br>
-<b>Filter transactions between dates:</b>
-<form action="/date" method="post">
-  <label for="transaction_date">Filter by date:</label>
-  <input type="date" name="transaction_date1" min="2010-01-01">
-  <input type="date" name="transaction_date2" min="2010-01-01">
+        <% if !tag_array.include?(transaction.tag_id) %>
+        <option value="<%= transaction.tag_id %>">
+          <%= transaction.tag.name %></option>
+          <% end %>
+          <% tag_array << transaction.tag_id %>
 
-  <input class="btn"type='submit' value="Search by date">
-</form>
+          <% end %>
+        </select>
 
-<br>
-<b>Filter transactions by keyword:</b>
-<form action="/description" method="post">
-  <label for="description">Filter by keyword:</label>
-  <input type="text" name="description">
+        <input class="btn"type='submit' value="Search by tag">
+      </form>
 
-  <input class="btn" type='submit' value="Search by description">
-</form>
+      <br>
+      <b>Filter transactions by value:</b>
+      <form action="/value" method="post">
+        <label for="value">Filter by value:</label>
+        <select name="value">
+          <option value="1">£0 - £50</option>
+          <option value="2">>£50 - £100</option>
+          <option value="3">>£100 - £500</option>
+          <option value="4">>£500 - £1000</option>
+          <option value="5">> £1000</option>
+        </select>
+
+        <input class="btn"type='submit' value="Search by value">
+      </form>
+
+      <br>
+      <b>Filter transactions between dates:</b>
+      <form action="/date" method="post">
+        <label for="transaction_date">Filter by date:</label>
+        <input type="date" name="transaction_date1" min="2010-01-01">
+        <input type="date" name="transaction_date2" min="2010-01-01">
+
+        <input class="btn"type='submit' value="Search by date">
+      </form>
+
+      <br>
+      <b>Filter transactions by keyword:</b>
+      <form action="/description" method="post">
+        <label for="description">Filter by keyword:</label>
+        <input type="text" name="description">
+
+        <input class="btn" type='submit' value="Search by description">
+      </form>
+    </div>
