@@ -170,16 +170,14 @@ a#add-merchant {
   font-size: 24px;
   border: 3px solid #648880;
   padding: 3px;
-  margin-left: 70px;
   margin-left:35%; 
-  margin-right:35%;
 }
 
 a#add-tag {
   font-size: 24px;
   border: 3px solid #648880;
   padding: 3px;
-  margin-left: 100px;
+  margin-left:37%;
 }
 
 a#back {
