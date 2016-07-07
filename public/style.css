@@ -171,6 +171,8 @@ a#add-merchant {
   border: 3px solid #648880;
   padding: 3px;
   margin-left: 70px;
+  margin-left:35%; 
+  margin-right:35%;
 }
 
 a#add-tag {
