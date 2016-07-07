@@ -106,7 +106,7 @@ class Transaction
   end
 
   def self.find_description(description)
-    sql = "SELECT * FROM transactions WHERE description LIKE '%#{description}%'"
+    sql = "SELECT * FROM transactions WHERE LOWER(description) LIKE LOWER('%#{description}%')"
     return Transaction.map_items(sql)
   end
 
