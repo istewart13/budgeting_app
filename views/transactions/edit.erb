@@ -1,24 +1,27 @@
-<h1>Edit an existing transaction:</h1>
+<div class="new-edit">
+  <h2>Edit an existing transaction:</h2>
 
-<form action="/transactions/<%= @transaction.id %>" method="post">
-  
-  <label for="id">Transaction ID:</label>
-  <input type="text" name="id" value="<%= @transaction.id() %>">
+  <form action="/transactions/<%= @transaction.id %>" method="post">
 
-  <label for="merchant_id">Merchant ID:</label>
-  <input type="text" name="merchant_id" value="<%= @transaction.merchant_id() %>">
+    <label for="id">Transaction ID:</label>
+    <input type="text" name="id" value="<%= @transaction.id() %>">
 
-  <label for="tag_id">Tag ID:</label>
-  <input type="text" name="tag_id" value="<%= @transaction.tag_id() %>">
+    <label for="merchant_id">Merchant ID:</label>
+    <input type="text" name="merchant_id" value="<%= @transaction.merchant_id() %>">
 
-  <label for="value">Value:</label>
-  <input type="number" min="0.01" step="0.01" name="value" value="<%= @transaction.value() %>">
+    <label for="tag_id">Tag ID:</label>
+    <input type="text" name="tag_id" value="<%= @transaction.tag_id() %>">
 
-  <label for="transaction_date">Transaction date:</label>
-  <input type="date" name="transaction_date" value="<%= @transaction.transaction_date() %>">
+    <label for="value">Value:</label>
+    <input type="number" min="0.01" step="0.01" name="value" value="<%= @transaction.value() %>">
 
-  <label for="description">Description:</label>
-  <input type="text" name="description" value="<%= @transaction.description() %>">
+    <br>
+    <label for="transaction_date">Transaction date:</label>
+    <input type="date" name="transaction_date" value="<%= @transaction.transaction_date() %>">
 
-  <input type='submit' value="Update">
-</form>
+    <label for="description">Description:</label>
+    <input type="text" name="description" value="<%= @transaction.description() %>">
+
+    <input type='submit' value="Update">
+  </form>
+</div>

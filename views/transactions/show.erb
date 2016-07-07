@@ -1,12 +1,20 @@
-<b>ID: <%= @transaction.id %></b>
-Merchant: <%= @transaction.merchant.name %>
-Tag: <%= @transaction.tag.name %>
-Value: <%= @transaction.value %>
-Date: <%= @transaction.transaction_date %>
-Description: <%= @transaction.description %>
-<p>
-<a href="/transactions/<%= @transaction.id %>/edit">Edit</a>
+<table class="table-centre" id="transaction-table">
+  <thead>
+    <tr>
+      <th id="centre-id" scope="col">ID</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
 
-<form action="/transactions/<%= @transaction.id %>/delete" method="post">
-  <input type="submit" value="Delete">
-</form></p>
+  <tr>
+    <td><%= @transaction.id() %></td>
+    <td><a href="/transactions/<%= @transaction.id %>/edit">Edit</a></td>
+    <td><form action="/transactions/<%= @transaction.id %>/delete" method="post">
+      <input type="submit" value="Delete">
+    </form></td>
+  </tr>
+</tbody>
+
+<div><a id="back" href="/transactions">Back</a><div>
