@@ -17,14 +17,14 @@
     </select>
 
     <label for="value">Value (£):</label>
-    <input type="number" min="0.01" step="0.01" name="value" placeholder='0.00'>
+    <input type="number" min="0.01" step="0.01" name="value" placeholder='0.00' required>
 
     <label for="transaction_date">Date:</label>
-    <input type="date" name="transaction_date" min="2010-01-01">
+    <input type="date" name="transaction_date" min="2010-01-01" required>
 
     <br>
     <label for="description">Description:</label>
-    <input type="text" size="80" maxlength="255" name="description">
+    <input type="text" required="required" size="80" maxlength="255" name="description">
 
     <br><br><br>
     <input type='submit' value="Create new transaction">
