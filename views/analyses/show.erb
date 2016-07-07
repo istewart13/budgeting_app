@@ -16,14 +16,14 @@
     <td><%= transaction.id() %></td>
     <td><%= transaction.merchant.name %></td>
     <td><%= transaction.tag.name %></td>
-    <td><%= transaction.value %></td>
+    <td><%= "%.2f" % transaction.value %></td>
     <td><%= transaction.transaction_date %></td>
     <td><%= transaction.description %></td>
   </tr>
   <% end %>
   <tr>
     <td colspan="3"><b>Total transaction value</b></td>
-    <td><b><%= @analysis.total_expenditure.round(2) %></b></td>
+    <td><b><%= "%.2f" % @analysis.total_expenditure.round(2) %></b></td>
   </tr>
 
 </tbody>

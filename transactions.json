@@ -1,0 +1,90 @@
+[
+  {
+    "json_class": "Transaction",
+    "data": {
+      "id": 3,
+      "merchant_id": 3,
+      "tag_id": 5,
+      "value": 54.99,
+      "transaction_date": "2016-03-23",
+      "description": "Bought a cat palace for Alfred"
+    }
+  },
+  {
+    "json_class": "Transaction",
+    "data": {
+      "id": 5,
+      "merchant_id": 5,
+      "tag_id": 9,
+      "value": 48.84,
+      "transaction_date": "2016-05-12",
+      "description": "Half a tank of petrol"
+    }
+  },
+  {
+    "json_class": "Transaction",
+    "data": {
+      "id": 7,
+      "merchant_id": 7,
+      "tag_id": 8,
+      "value": 123.82,
+      "transaction_date": "2016-04-27",
+      "description": "Monthly student loan bill"
+    }
+  },
+  {
+    "json_class": "Transaction",
+    "data": {
+      "id": 8,
+      "merchant_id": 8,
+      "tag_id": 8,
+      "value": 58.35,
+      "transaction_date": "2016-06-29",
+      "description": "Monthly electricity bill"
+    }
+  },
+  {
+    "json_class": "Transaction",
+    "data": {
+      "id": 9,
+      "merchant_id": 9,
+      "tag_id": 10,
+      "value": 84.6,
+      "transaction_date": "2016-07-02",
+      "description": "Cheap flight to Amsterdam"
+    }
+  },
+  {
+    "json_class": "Transaction",
+    "data": {
+      "id": 10,
+      "merchant_id": 10,
+      "tag_id": 5,
+      "value": 56.43,
+      "transaction_date": "2016-06-26",
+      "description": "Bought a lot of soup"
+    }
+  },
+  {
+    "json_class": "Transaction",
+    "data": {
+      "id": 4,
+      "merchant_id": 4,
+      "tag_id": 3,
+      "value": 15.5,
+      "transaction_date": "2016-04-01",
+      "description": "Went to cinema, got a large popcorn and a drink"
+    }
+  },
+  {
+    "json_class": "Transaction",
+    "data": {
+      "id": 11,
+      "merchant_id": 2,
+      "tag_id": 2,
+      "value": 0.04,
+      "transaction_date": "2016-07-06",
+      "description": "soup"
+    }
+  }
+]
