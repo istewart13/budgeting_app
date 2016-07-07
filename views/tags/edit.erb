@@ -3,7 +3,7 @@
 
 <form action="/tags/<%= @tag.id %>" method="post">
   <label for="name">Tag Name:</label>
-  <input type="text" name="name" value="<%= @tag.name() %>">
+  <input type="text" required="required" name="name" value="<%= @tag.name() %>">
 
   <input type='submit' value="Update">
 </form>
